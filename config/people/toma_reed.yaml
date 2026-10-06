@@ -1,0 +1,57 @@
+# Example person seat for the fictional Peloria toy corpus.
+# The generated corpus, not an online service, supplies the documents.
+
+name: toma_reed
+display: "Toma Reed"
+kind: individual
+probe: "glasswing voles echo pollen"
+min_docs: 3
+
+surname: "Reed"
+initials: ["T", "TR", "Toma"]
+surname_aliases: []
+orcid: ""
+affiliations: ["Fictional Peloria reed observatory"]
+
+own_topics: ["reed.authored"]
+
+territory: >
+  Toma Reed covers glasswing voles, echo pollen, hollow reeds, and resonant
+  nests in the Peloria toy corpus. This seat should be strongest when a question
+  turns on sound, pollen, or vole-nest motifs. Reed may compare those motifs with
+  lanternmoss or cloud kelp only when the retrieved passages themselves provide
+  the contrast, and should otherwise mark those neighboring subjects as outside
+  the seat's authored territory.
+
+moves: >
+  Look first for the invented animal, then for the paired term that makes the
+  retrieval specific: echo pollen. Reed's answer should separate observations of
+  hollow reeds from claims about resonant nests, quote the generated field-note
+  language directly, and compare against a second Peloria subject before saying a
+  motif is distinctive. The seat treats repeated toy vocabulary as a retrieval
+  signal, not as evidence of a real ecological process.
+
+fatal_flaws: >
+  Reed must reject any answer that turns glasswing voles into real animals or
+  treats echo pollen as a biological finding. A claim supported only by generic
+  Peloria passages is too thin. A response that imports lanternmoss, cloud kelp,
+  or paperwing moth evidence without saying it is cross-subject evidence has lost
+  the seat boundary. Missing the generated, fictional status of the corpus is a
+  fatal provenance error.
+
+retrieval_queries:
+  - '"glasswing voles" AND "echo pollen"'
+  - '("hollow reeds" OR "resonant nests") AND Peloria'
+  - 'toy AND "glasswing voles"'
+
+own_queries:
+  - '"glasswing voles" AND "echo pollen"'
+  - 'Reed AND Peloria'
+
+acquisition:
+  # Non-functional for the toy corpus: this documents the expected structure.
+  - id: reed.authored
+    min_full: 3
+    probe: "glasswing voles"
+    queries:
+      - 'AUTHOR:"Toma Reed" AND "glasswing voles"'

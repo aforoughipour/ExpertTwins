@@ -1,0 +1,27 @@
+# Read path: packet construction, verification, the diversity instruments, the
+# guardrail and the transcript. Requires no GPU, no network access and no model.
+PyYAML>=6.0
+numpy>=1.24
+pydantic>=2.5
+
+# Acquisition. The only component that uses the network; not required on an
+# air-gapped compute node.
+requests>=2.31
+lxml>=5.0
+PyMuPDF>=1.23
+# `requests` verifies TLS against certifi's fixed bundle of public roots, so on a
+# network that re-signs traffic with a private CA held in the operating-system
+# trust store, verification fails and remote APIs appear unreachable.
+# `truststore` directs Python to the operating-system store instead; see
+# expertwins/netenv.py. Not required where TLS is not intercepted.
+truststore>=0.9
+
+# Tests.
+pytest>=8.0
+
+# Optional and intentionally not pinned:
+#   sentence-transformers>=3.0
+# provides a neural encoder for the semantic diversity axis in place of the
+# tf-idf cosine fallback. Install it on every node or on none: `embed()` records
+# which backend ran, and Vendi scores computed under the two backends are not
+# comparable. Set EXPERTWINS_EMBED_MODEL to the same model everywhere.

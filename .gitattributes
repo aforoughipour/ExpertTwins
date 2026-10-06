@@ -1,0 +1,16 @@
+# Normalise line endings in the repository. Checkout follows the platform.
+#
+# This matters more than usual here: quote verification is character-exact, and
+# a transcript or corpus file that changes line endings between machines changes
+# the bytes a quote is checked against.
+* text=auto
+
+*.py   text diff=python
+*.md   text
+*.yaml text
+*.yml  text
+*.toml text
+*.sbatch text eol=lf
+
+*.sqlite  binary
+*.pdf     binary

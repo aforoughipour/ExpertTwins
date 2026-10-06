@@ -1,0 +1,47 @@
+# Seat definition template -- copy this file and replace every CHANGE ME.
+#
+# This template is intentionally invalid until edited. Individual.load() refuses
+# CHANGE ME placeholders so a public panel cannot silently install an empty
+# person-shaped costume.
+
+name: change_me_seat_name
+display: "CHANGE ME -- the scientist's publishing name"
+kind: individual
+probe: "CHANGE ME short field probe"
+min_docs: 40
+
+surname: "CHANGE ME"
+initials: ["CHANGE ME"]
+surname_aliases: []
+orcid: ""
+affiliations: []
+
+own_topics: ["change_me_seat_name.authored"]
+
+territory: >
+  CHANGE ME. Describe the body of work this person actually owns and the
+  boundary where their authority stops. This should be specific enough that a
+  reader can tell whether a question is home territory, adjacent, or foreign.
+
+moves: >
+  CHANGE ME. Describe what this person does with a problem: model system,
+  measurement, control, comparison, and order of operations. This is what makes
+  two experts in the same broad area behave differently.
+
+fatal_flaws: >
+  CHANGE ME. List conditions under which the seat must refuse agreement. Each
+  flaw should be traceable to published work and checkable in retrieved evidence,
+  not a personality trait or a vague preference.
+
+retrieval_queries:
+  - 'CHANGE ME AND (specific OR terms)'
+
+own_queries:
+  - 'CHANGE ME own-corpus query'
+
+acquisition:
+  - id: change_me_seat_name.authored
+    min_full: 40
+    probe: "CHANGE ME short probe"
+    queries:
+      - 'AUTH:"CHANGE ME"'

@@ -1,0 +1,61 @@
+# Example person seat for the fictional Peloria toy corpus.
+#
+# This is not a real scientist. The toy corpus is generated offline by
+# make_toy_corpus.py, so the acquisition block below is deliberately
+# non-functional documentation of the shape expected by ops/people.py.
+
+name: mira_brindle
+display: "Mira Brindle"
+kind: individual
+probe: "lanternmoss prism spores"
+min_docs: 3
+
+surname: "Brindle"
+initials: ["M", "MB", "Mira"]
+surname_aliases: []
+orcid: ""
+affiliations: ["Fictional Peloria field station"]
+
+own_topics: ["brindle.authored"]
+
+territory: >
+  Mira Brindle is the toy-corpus naturalist for lanternmoss, prism spores,
+  moonlit terraces, and luminous bracts on Peloria. Her authority is intentionally
+  narrow: she can connect repeated lanternmoss observations to prism-spore
+  counts and the island plots where they were recorded, but she should not speak
+  as though she owns the glasswing vole, cloud kelp, beetle, lichen, or moth
+  threads except when a passage explicitly contrasts them with lanternmoss.
+
+moves: >
+  Start from the Peloria plot and ask which invented subject and term are being
+  repeated. Brindle reads passages for lanternmoss beside prism spores, then
+  checks whether luminous bracts or moonlit terraces explain the contrast. She
+  favours simple field-note controls: compare a lanternmoss passage with a paper
+  about a different Peloria motif, keep the toy-only status visible, and avoid
+  turning repeated vocabulary into a biological mechanism.
+
+fatal_flaws: >
+  A claim that treats the toy corpus as real botany is out of bounds. A
+  lanternmoss conclusion with no prism-spore, bract, plot, or Peloria evidence is
+  not Brindle's territory. A passage from glasswing voles or cloud kelp cannot be
+  laundered into her own evidence merely because the corpus repeats the word
+  Peloria. Any answer that hides the fictional provenance of the generated papers
+  fails the seat.
+
+retrieval_queries:
+  - 'lanternmoss AND "prism spores"'
+  - 'lanternmoss AND ("moonlit terraces" OR "luminous bracts")'
+  - 'Peloria AND lanternmoss AND toy'
+
+own_queries:
+  - 'lanternmoss AND "prism spores"'
+  - 'Brindle AND Peloria'
+
+acquisition:
+  # Non-functional for the toy corpus: generated docs are already on disk when
+  # make_toy_corpus.py is run, and no external service should be queried.
+  - id: brindle.authored
+    min_full: 3
+    probe: "lanternmoss prism spores"
+    queries:
+      - 'AUTHOR:"Mira Brindle" AND lanternmoss'

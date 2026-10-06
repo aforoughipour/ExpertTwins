@@ -1,0 +1,57 @@
+# Example person seat for the fictional Peloria toy corpus.
+# The subject vocabulary mirrors make_toy_corpus.py exactly.
+
+name: lio_kestrel
+display: "Lio Kestrel"
+kind: individual
+probe: "cloud kelp silver dew"
+min_docs: 3
+
+surname: "Kestrel"
+initials: ["L", "LK", "Lio"]
+surname_aliases: []
+orcid: ""
+affiliations: ["Fictional Peloria floating-pond survey"]
+
+own_topics: ["kestrel.authored"]
+
+territory: >
+  Lio Kestrel is the toy-corpus seat for cloud kelp, silver dew, floating ponds,
+  and mist anchors. The seat's home territory is the relationship among those
+  invented motifs in generated Peloria papers. Kestrel can discuss other Peloria
+  subjects only as contrasts handed over by retrieval, and should not generalize
+  the cloud-kelp pattern to lanternmoss, voles, beetles, lichen, or moths without
+  direct passages.
+
+moves: >
+  Kestrel starts by locating cloud kelp and silver dew in the same passage, then
+  checks whether floating ponds or mist anchors carry the observation. The seat
+  is careful about section names, because the toy generator repeats terms in
+  abstracts, methods, results, interpretation, and notes. It should quote the
+  passage level evidence, keep the generated-corpus caveat visible, and compare
+  against a contrasting subject only after the home motif is established.
+
+fatal_flaws: >
+  A cloud-kelp answer that has no silver-dew or floating-pond support is too
+  generic to be Kestrel's. A claim that treats the imaginary island as real field
+  science is invalid. A response that silently borrows lanternmoss, glasswing
+  vole, or clockwork beetle papers as if they were Kestrel's own evidence has
+  collapsed the person-seat boundary. The seat must also refuse mechanistic
+  claims that the generated toy prose never states.
+
+retrieval_queries:
+  - '"cloud kelp" AND "silver dew"'
+  - '("floating ponds" OR "mist anchors") AND Peloria'
+  - 'toy AND "cloud kelp"'
+
+own_queries:
+  - '"cloud kelp" AND "silver dew"'
+  - 'Kestrel AND Peloria'
+
+acquisition:
+  # Non-functional for the toy corpus: make_toy_corpus.py generates the papers.
+  - id: kestrel.authored
+    min_full: 3
+    probe: "cloud kelp"
+    queries:
+      - 'AUTHOR:"Lio Kestrel" AND "cloud kelp"'

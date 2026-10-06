@@ -1,0 +1,19 @@
+# Example own-corpus contamination oracle for the fictional toy seats.
+#
+# contaminants: title fragments that must NOT appear in a seat's own corpus.
+# keepers: title fragments that MUST remain after any attribution repair.
+# With no generated library installed, the script reports keepers as missing but
+# should not traceback.
+contaminants:
+  mira_brindle:
+    - "glasswing voles and echo pollen"
+    - "cloud kelp and silver dew"
+  toma_reed:
+    - "lanternmoss and prism spores"
+keepers:
+  mira_brindle:
+    - "lanternmoss and prism spores"
+  toma_reed:
+    - "glasswing voles and echo pollen"
+  lio_kestrel:
+    - "cloud kelp and silver dew"

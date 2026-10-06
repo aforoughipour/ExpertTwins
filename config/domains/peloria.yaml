@@ -1,0 +1,21 @@
+# Domain/column seat for the fictional Peloria toy corpus.
+# A domain seat is not a person: it has no surname, initials, or own corpus.
+
+name: peloria
+display: "Peloria field guide"
+kind: domain
+probe: "Peloria toy corpus"
+territory: >
+  The full imaginary island of Peloria across all generated subjects: lanternmoss,
+  glasswing voles, cloud kelp, clockwork beetles, velvet lichen, and paperwing
+  moths, along with their paired toy terms.
+moves: >
+  Compare motifs across generated papers, keep the offline toy status explicit,
+  and prefer passages whose topics include both toy and peloria.
+fatal_flaws: >
+  Treating Peloria as real science, hiding the generated provenance, or letting
+  one subject's vocabulary masquerade as another subject's evidence.
+queries:
+  - 'Peloria AND toy'
+  - '(lanternmoss OR "glasswing voles" OR "cloud kelp") AND Peloria'
+  - '("clockwork beetles" OR "velvet lichen" OR "paperwing moths") AND Peloria'

@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "expertwins"
+version = "0.1.0"
+description = "A panel of individual expert twins, with a measured floor under their disagreement"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+keywords = ["llm", "multi-agent", "literature", "retrieval", "evaluation", "science"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+]
+
+# The read path -- packets, verification, the diversity instruments, the
+# guardrail and the transcript -- requires only these three packages. It needs
+# no GPU, no network access and no model, so an installation can be copied to an
+# air-gapped cluster and run there.
+dependencies = [
+    "PyYAML>=6.0",
+    "numpy>=1.24",
+    "pydantic>=2.5",
+]
+
+[project.optional-dependencies]
+# Acquisition only. It is the sole part of the system that touches the network.
+acquire = [
+    "requests>=2.31",
+    "lxml>=5.0",
+    "PyMuPDF>=1.23",
+    "truststore>=0.9",
+]
+# Gives the semantic diversity axis a neural encoder instead of the tf-idf
+# fallback. Install it everywhere or nowhere: the backend is recorded in every
+# report and numbers from two backends are not comparable.
+embed = ["sentence-transformers>=3.0"]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+include = ["expertwins*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

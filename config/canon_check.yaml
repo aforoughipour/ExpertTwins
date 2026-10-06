@@ -1,0 +1,13 @@
+# Example canon check for the fictional Peloria toy corpus.
+#
+# Structure: group -> {lowercase title fragment: label}. Fragments should be
+# short enough to match a preprint or generated variant, but specific enough not
+# to hit every document.
+peloria home motifs:
+  fictional observations of lanternmoss and prism spores: "Brindle lanternmoss exemplar"
+  fictional observations of glasswing voles and echo pollen: "Reed glasswing exemplar"
+  fictional observations of cloud kelp and silver dew: "Kestrel cloud-kelp exemplar"
+peloria comparison motifs:
+  fictional observations of clockwork beetles and amber gears: "Clockwork beetle comparator"
+  fictional observations of velvet lichen and blue lanterns: "Velvet lichen comparator"
+  fictional observations of paperwing moths and saffron dust: "Paperwing moth comparator"

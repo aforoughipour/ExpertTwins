@@ -1,0 +1,54 @@
+# ---------------------------------------------------------------------------
+# Corpora, runs and caches are data, not code, and are not tracked.
+#
+# The prefix rule on `library` is deliberate: acquisition writes each seat into
+# a separate root (`library_seat_<name>/`, `library_canon/`, ...) because two
+# processes appending to one manifest interleave lines and tear rows.
+#
+# The rules are root-anchored so that they cannot match source directories
+# deeper in the tree.
+# ---------------------------------------------------------------------------
+/library*/
+/runs/
+/data/
+/.cache/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+MANIFEST.jsonl
+
+# Seat specifications other than the bundled fictional examples are not tracked.
+config/people/*.yaml
+!config/people/TEMPLATE.yaml
+!config/people/mira_brindle.yaml
+!config/people/toma_reed.yaml
+!config/people/lio_kestrel.yaml
+config/_acquire_*.yaml
+config/_resolve_*.json
+config/*.own.json
+config/people/*.own.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
