@@ -36,12 +36,16 @@ without reference to a measured baseline.
 - **Toy example.** A generated, fictional corpus and a deterministic mock seat
   with which the complete pipeline can be run offline, without a language
   model, network access, or API cost.
+- **Example roundtables.** Interactive idea-flow maps of three discipline-seat
+  roundtables on neuroblastoma immunotherapy, which show how ideas arise, are
+  contested and are carried forward across turns
+  ([`examples/roundtables/`](examples/roundtables/README.md)).
 
 The following are not included in the repository at present:
 
 - Literature corpora. Corpora are built with the included acquisition tools.
 - Seat specifications. Those in `config/` are fictional examples.
-- Transcripts and results.
+- Transcripts and results, other than the example roundtables above.
 
 ## Installation
 
